@@ -1,0 +1,23 @@
+<html>
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<script>
+function send_msg(){
+
+  }
+</script>
+</head>
+<body>
+<input id="recv" type="text">
+<input type="button" value="메시지전송" onclick="send_msg()"><BR>
+</body>
+</html>
+{% if question_list %}
+    <ul>
+    {% for question in question_list %}
+        <li><a href="/pybo/{{ question.id }}/">{{ question.subject }}</a></li>
+    {% endfor %}    
+    </ul>
+{% else %}
+    <q>질문이 없습니다</q>
+{% endif %}
